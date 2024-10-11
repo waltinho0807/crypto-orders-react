@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
-    Button, TablePagination, Paper, Typography
+    TablePagination, Paper, Typography
 } from '@mui/material';
 
 const OrdersTable = ({ setSymbol }) => {
