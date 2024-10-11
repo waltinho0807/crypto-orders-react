@@ -12,7 +12,7 @@ const UpdateApiKeyForm = () => {
     // Carregar os dados existentes quando o componente monta
     useEffect(() => {
         const fetchApiKey = async () => {
-            const response = await axios.get(`https://ccxtbot.netlify.app/api/get-api-key` || 'http://localhost:5000/api/get-api-key'); // Rota para obter os dados existentes
+            const response = await axios.get(`https://ccxtbot-b471d0d62686.herokuapp.com/api/get-api-key` || 'http://localhost:5000/api/get-api-key'); // Rota para obter os dados existentes
             const { symbol, timeframe, usdtAmount } = response.data;
             setSymbol(symbol);
             setTimeframe(timeframe);
@@ -26,7 +26,7 @@ const UpdateApiKeyForm = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.put('https://ccxtbot.netlify.app/api/update-api-key' || 'http://localhost:5000/api/update-api-key', {
+            const response = await axios.put('https://ccxtbot-b471d0d62686.herokuapp.com/api/update-api-key' || 'http://localhost:5000/api/update-api-key', {
                 symbol,
                 timeframe,
                 usdtAmount,

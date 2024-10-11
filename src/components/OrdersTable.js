@@ -16,7 +16,7 @@ const OrdersTable = ({ setSymbol }) => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('https://ccxtbot.netlify.app/api/orders'  || 'http://localhost:5000/api/orders');
+                const response = await axios.get('https://ccxtbot-b471d0d62686.herokuapp.com/api/orders'  || 'http://localhost:5000/api/orders');
                 setOrders(response.data);
             } catch (err) {
                 setError('Erro ao buscar ordens');

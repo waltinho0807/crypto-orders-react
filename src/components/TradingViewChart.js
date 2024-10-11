@@ -9,7 +9,7 @@ const TradingViewChart = () => {
     useEffect(() => {
         const fetchApiKey = async () => {
             try {
-                const response = await axios.get('https://ccxtbot.netlify.app/api/get-api-key'  || 'http://localhost:5000/api/get-api-key');
+                const response = await axios.get('https://ccxtbot-b471d0d62686.herokuapp.com/api/get-api-key'  || 'http://localhost:5000/api/get-api-key');
                 const { symbol } = response.data;
                 setSymbol(symbol ? `BINANCE:${symbol.replace('/', '')}` : 'BINANCE:BTCUSDT');
             } catch (error) {
