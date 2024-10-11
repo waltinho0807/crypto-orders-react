@@ -9,7 +9,7 @@ const TradingViewChart = () => {
     useEffect(() => {
         const fetchApiKey = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/get-api-key');
+                const response = await axios.get(process.env.BASE_URL || 'http://localhost:5000/api/get-api-key');
                 const { symbol } = response.data;
                 setSymbol(symbol ? `BINANCE:${symbol.replace('/', '')}` : 'BINANCE:BTCUSDT');
             } catch (error) {
