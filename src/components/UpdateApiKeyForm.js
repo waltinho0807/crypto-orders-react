@@ -12,7 +12,7 @@ const UpdateApiKeyForm = () => {
     // Carregar os dados existentes quando o componente monta
     useEffect(() => {
         const fetchApiKey = async () => {
-            const response = await axios.get(process.env.BASE_URL || 'http://localhost:5000/api/get-api-key'); // Rota para obter os dados existentes
+            const response = await axios.get(`${process.env.BASE_URL}/get-api-key` || 'http://localhost:5000/api/get-api-key'); // Rota para obter os dados existentes
             const { symbol, timeframe, usdtAmount } = response.data;
             setSymbol(symbol);
             setTimeframe(timeframe);
@@ -26,7 +26,7 @@ const UpdateApiKeyForm = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.put('http://localhost:5000/api/update-api-key', {
+            const response = await axios.put(`${process.env.BASE_URL}/get-api-key` || 'http://localhost:5000/api/update-api-key', {
                 symbol,
                 timeframe,
                 usdtAmount,

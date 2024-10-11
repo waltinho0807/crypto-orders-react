@@ -16,7 +16,7 @@ const OrdersTable = ({ setSymbol }) => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get(process.env.BASE_URL || 'http://localhost:5000/api/orders');
+                const response = await axios.get(`${process.env.BASE_URL}/api/orders`  || 'http://localhost:5000/api/orders');
                 setOrders(response.data);
             } catch (err) {
                 setError('Erro ao buscar ordens');
